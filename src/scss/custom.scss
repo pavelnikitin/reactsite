@@ -1,0 +1,451 @@
+
+/* ANIMATION */
+
+/*Animates bottom arrow in Hero section */
+@keyframes arrow {
+  0% {
+    top: 85%;
+  }
+
+
+  100% {
+    top: 90%
+  }
+}
+
+
+
+
+/* Drawing logo */
+@keyframes draw {
+  
+  70% {
+     fill: rgba(253, 253, 253, 0);
+    
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    fill: #fff;     
+  }
+}
+
+.cls-1 {
+  font-size: 173px;
+  fill: rgba(253, 253, 253, 0);
+  stroke-dasharray: 1093;
+  stroke-dashoffset: 1093;
+  animation: draw 2s 1s ease-in forwards;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  stroke-width: 5px;
+  font-family: $font1;
+  letter-spacing: 10px;
+}
+
+
+
+
+/* Base styles */
+
+html {
+  font-size: 100%;
+}
+
+@media (min-width: 1700px) {
+  html {
+    font-size: 120%;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 85%;
+  }
+}
+
+body {
+  background-color: $theme-light;
+  overflow-x: hidden;
+  font-family: 'Montserrat',"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+body,
+p,
+span {
+  font-size: 1rem;
+}
+
+a {
+  color: $theme-success;
+
+  &:hover {
+    color: $theme-success;
+    cursor: pointer;
+  }
+}
+
+section {
+  padding: 100px 20px 100px 20px;
+}
+
+.sectiontitle {
+  color: $theme-success;
+  font-family: $font1;
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 0;
+}
+
+hr.underline {
+  border-top: 2px solid $theme-success;
+  width: 150px;
+  margin-bottom: 40px;
+}
+
+.portfolio__title {
+  color: $theme-success;
+  font-family: $font1;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 40px;
+}
+
+.portfolio__preview {
+  margin-top: 50px;
+}
+
+/* Carousel */
+
+.portfolio__slider {
+  margin-top: 50px;
+}
+
+/* buttons */
+
+.btn-primary {
+  display: block;
+  background-color: $theme-light;
+  color: $theme-success;
+  border: 2px solid $theme-success;
+  width: 150px;
+  margin: 70px auto 80px auto;
+
+  &:focus {
+    background-color: $theme-light;
+    color: $theme-success;
+    border: 2px solid $theme-success !important;
+  }
+
+  &:hover,
+  &:active {
+    background-color: $theme-success !important;
+    color: $theme-light;
+    border: 2px solid $theme-success;
+    position: relative;
+    bottom: 2px;
+  }
+}
+
+
+
+/* navigation menu */
+nav .navbar-brand {
+  height: 50px;
+  width: 250px;
+  padding-top: 4px;
+}
+
+@mixin hoverlink {
+  background-color: $theme-light;
+  color: $theme-success !important; 
+}
+
+.navbar.navbar-default {
+  background-color: $theme-primary;
+  border: none;
+  border-radius: 0;
+  margin-bottom: 0;
+
+  .navbar-nav > li > a.activelink {
+    @include hoverlink;  
+  }
+
+  .navbar-nav > li > a {
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    color: $theme-light !important;
+
+    &:hover {
+      @include hoverlink; 
+    }
+  }
+}
+
+.nav > li > a {
+  padding: 15px 7px;
+}
+
+.navbar-collapse {
+  border: 0;
+}
+
+.navbar-toggle {
+  padding: 3px 10px;
+  margin-right: 20px;
+}
+
+.navbar-default .navbar-toggle {
+  color: $theme-light;
+  font-size: 1.3rem;
+
+  &:hover,
+  &:focus {
+    background-color: $theme-light;
+    color: $theme-success;
+  }
+}
+
+
+
+/* section hero */
+
+.hero {
+  margin-top: 0px;
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding-top: 35%;
+  min-height: 400px;
+  
+}
+
+.hero__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.fa.fa-angle-down {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  position: absolute;
+  left: 50%;
+  top: 90%;
+  z-index: 7;
+  animation: arrow .8s infinite ease-in alternate;
+}
+
+.hero__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+.hero__img_contacts {
+  background: url('../img/contacts.jpg');  
+  background-size: cover;  
+}
+
+.hero__img_resource {
+  background: url('../img/resource.jpg');  
+  background-size: cover;  
+}
+
+.hero__img_portfolio {
+  background: url('../img/myworks.jpg');  
+  background-size: cover;  
+}
+
+@media (max-width: 767px) {
+  .hero {
+    background: url('../img/Workaholic.jpg') center center / cover no-repeat;
+  }
+
+  .hero__video {
+    display: none;
+  }
+}
+
+.hero__overlay {
+  background: $theme-primary;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  z-index: 4;
+}
+
+.hero__overlay h1 {
+  text-align: center;
+  color: $theme-light;
+  font-size: 2.8rem;
+  font-family: $font1;
+  margin: 12rem 1rem 1rem;
+}
+
+.hero__overlay_about h1 {
+  margin-top: 10rem;
+}
+
+@media (max-width: 600px) {
+  .hero__overlay_about h1 {
+    margin-top: 7rem;
+  }
+}
+
+@media (min-width: 1700px) {
+  .hero__overlay h1 {
+    margin-top: 12rem;
+    font-size: 3.3rem;
+  }
+}
+
+
+
+/* section about me */
+
+.aboutme {
+  background-color: $theme-darklight;
+  min-height: 400px;
+}
+
+/* section portfolio */
+
+.portfolio {
+  background-color: $theme-light;
+  min-height: 400px;
+}
+
+.portfolio__item {
+    margin-bottom: 200px;
+}
+
+@media (max-width: 760px) {
+
+  .portfolio__item {
+    margin-bottom: 60px;
+}
+
+}
+
+
+
+/* section contacts */
+h1.hero__overlay_contacts {
+  margin: 10rem 1rem 1rem;
+} 
+
+.contacts {
+  min-height: 320px;
+  background-color: $theme-light;
+  padding-top: 50px;
+  margin-bottom: 80px;
+  .sectiontitle {
+    margin-top: 50px;
+  }
+}
+
+
+@media (max-width: 767px) {
+  .contacts {
+    padding-top: 0px;
+    margin-bottom: 20px;
+  }
+}
+
+p.contacts__info {
+  font-size: 1.4rem;
+}
+
+@media (max-width: 500px) {
+  p.contacts__info {
+    font-size: 0.9rem;
+  }
+}
+
+.fa.fa-phone,
+.fa.fa-envelope {
+  color: $theme-success;
+}
+
+/* google map */
+
+.google_map {
+  margin-top: 50px;
+
+  #map {
+    height: 350px;
+    background-color: gray;
+  }
+}
+
+/* sendmail section */
+
+.sendmail {
+  background-color: $theme-darklight;
+  min-height: 400px;
+  padding-bottom: 0px;
+}
+
+.panel.panel-success {
+  background-color: $theme-darklight;
+  border: none;
+  box-shadow: none;
+}
+
+/* page resources */
+
+.resource__wraper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* footer */
+footer.footer {
+  min-height: 150px;
+  background-color: $theme-success;
+  color: $theme-light;
+}
+
+.bage.social {
+  background: $theme-light;
+  display: inline-block;
+  color: $theme-success;
+  border-radius: 50px;
+  font-size: 1.5rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  text-align: center;
+  line-height: 2.1rem;
+  padding-top: 0.2rem;
+  margin-right: 0px;
+  margin-left: 0.5625rem;
+  border: 2px solid $theme-success;
+
+  &:hover {
+    background-color: $theme-success;
+    color: $theme-light;
+    border: 2px solid $theme-light;
+  }
+}
+
+.footer h4 {
+  margin-top: 20px;
+}
+
+.footer__copyright {
+  padding-top: 20px;
+  font-size: 0.9rem;
+  margin-top: 20px;
+  background-color: darken($theme-success, 10%);
+}
+
